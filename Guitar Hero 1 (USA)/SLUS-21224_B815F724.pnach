@@ -1,0 +1,13 @@
+gametitle= Guitar Hero [SLUS 21224] (U)
+comment= Better HO/PO's by jnack
+author= jnack
+//no these scores don't count
+//labels found in gh1 prototype from hidden palace
+//nop beql before BeatMatcher::NonStrumSwing below BeatMatcher::FretButtonDown
+patch=1,EE,0025b95c,word,00000000
+//nop beq before BeatMatcher::NonStrumSwing below BeatMatcher::FretButtonUp above GuitarController::GetCurrentSlot
+patch=1,EE,0025ba64,word,00000000
+
+//No Strum limit by GenericMadScientist
+//change integer in BeatMatcher::Swing from 80 to -128
+patch=1,EE,00275dc0,word,803f013c

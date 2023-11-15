@@ -1,0 +1,12 @@
+﻿"Guitar Hero /ID SLUS_212.24"
+Mastercode
+90278BE8 0C09E2A2
+//no these scores don't count
+//labels found in gh1 prototype from hidden palace
+//nop beql before BeatMatcher::NonStrumSwing below BeatMatcher::FretButtonDown
+2025b95c 00000000
+//nop beq before BeatMatcher::NonStrumSwing below BeatMatcher::FretButtonUp above GuitarController::GetCurrentSlot
+2025ba64 00000000
+//No Strum limit by GenericMadScientist
+//change integer in BeatMatcher::Swing from 80 to -128
+20275dc0 803f013c
