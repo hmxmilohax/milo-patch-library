@@ -23,3 +23,5 @@ To fix the visible hud on slide in:
 `{hud set_showing FALSE}` in (intro_start)
 and
 `{hud set_showing TRUE}` in (slide_meter_in)
+
+included is a vanilla file with these additions and comments if you need help
