@@ -24,4 +24,8 @@ To fix the visible hud on slide in:
 and
 `{hud set_showing TRUE}` in (slide_meter_in)
 
+
+IMPORTANT NOTE: if rebuilding a gh1 iso for the first time ALWAYS put an `ark.txt` in the root of your ark files before building an ark
+This fixes a bug in arkhelper for some reason
+
 included is a vanilla file with these additions and comments if you need help
