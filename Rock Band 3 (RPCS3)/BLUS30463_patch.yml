@@ -1,0 +1,36 @@
+Version: 1.2
+PPU-fd05a99a972f673a7bd5eed301e3ed9d7654b9be:
+  "Force self shadowing":
+    Games:
+      "Rock Band 3":
+        BLUS30463: [01.05]
+    Author: "Axolotli (Aloquendiar)"
+    Patch Version: 1.0
+    Group: "Self Shadows"
+    Notes: "Restores self shadowing in songs like on Xbox 360."
+    Patch:
+      - [be32, 0x007afcc0, 0x60000000] # bypass TheRnd 0x103 flag check in RndShadowMap::PrepShadow
+      - [be32, 0x007afcf8, 0x60000000] # bypass light type check in RndShadowMap::PrepShadow
+
+PPU-2ce569f8e2b2ae62988983808cf0885bfa12a180:
+  "Force self shadowing and fix teleporting [RB3DX]":
+    Games:
+      "Rock Band 3":
+        BLUS30463: [01.05]
+    Author: "Axolotli (Aloquendiar)"
+    Patch Version: 1.0
+    Group: "Self Shadows"
+    Notes: "Restores self shadowing in songs like on Xbox 360 and also fixes instrument teleporting. Requires the latest Rock Band 3 Deluxe with Detail Mode on High."
+    Patch:
+      - [be32, 0x007afd20, 0x60000000] # bypass TheRnd 0x103 flag check in RndShadowMap::PrepShadow
+      - [be32, 0x007afce8, 0x60000000] # bypass light type check in RndShadowMap::PrepShadow
+
+  "Fix library crash [RB3DX]":
+    Games:
+      "Rock Band 3":
+        BLUS30463: [01.05]
+    Author: "Axolotli (Aloquendiar)"
+    Patch Version: 1.0
+    Notes: "Fixes a crash when refreshing the music library by not sending metadata. Requires Rock Band 3 Deluxe."
+    Patch:
+      - [be32, 0x00284068, 0x60000000] # Cancel sending metadata during TheRockCentral.SyncAvailableSongs

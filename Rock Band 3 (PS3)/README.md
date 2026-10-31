@@ -1,0 +1,5 @@
+## Changes
+* TheRnd 0x103 flag light type checks in `RndShadowMap::PrepShadow` have been bypassed.
+* `LightPreset` has an issue where light calls are not cleared out since the compiler removed the condition that calls `LightPreset::ResetEvents` and `BandDirector::OnLightPresetKeyframeInterp`. The solution was to modify `BandDirector::Enter` (`0x00456970`) from an `nop` to `bl` so that it calls `LightPreset::ResetEvents` and clears the `LightPreset` calls. This prevents it fromin keeping old `[next]` events.
+* To fix the talkies glitch, `VoiceBeat::Reset` has two `OR` instructions modified that inject both `mVoiceEnergy` and `mFullBandEnergy`.
+* To restore the bass boost, which was probably caused by a compiler error, `0032DD80` was edited to `3C0040E0`. This increases the volume of the bass boost effect by +6 dB.
