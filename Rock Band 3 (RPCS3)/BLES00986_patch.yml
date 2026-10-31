@@ -1,0 +1,12 @@
+Version: 1.2
+PPU-c45d94a8516f007b32298b36a09e0551f0fc7c5c:
+  "Force self shadowing and fix teleporting":
+    Games:
+      "Rock Band 3":
+        BLES00986: [01.06]
+    Author: "Axolotli (Aloquendiar)"
+    Patch Version: 1.0
+    Notes: "Restores self shadowing in songs like on Xbox 360."
+    Patch:
+      - [be32, 0x007afd20, 0x60000000] # bypass TheRnd 0x103 flag check in RndShadowMap::PrepShadow
+      - [be32, 0x007afce8, 0x60000000] # bypass light type check in RndShadowMap::PrepShadow
